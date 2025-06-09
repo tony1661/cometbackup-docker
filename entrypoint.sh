@@ -12,7 +12,12 @@ if [ -d /opt/CometBackup ]; then
     
 else
     echo "/opt/CometBackup is empty"
-    /tmp/Comet_Backup-25.5.0.run --lobby
+    if [ -f /root/.config/backup-tool/config.dat ]; then
+        echo "File /root/.config/backup-tool/config.dat exists"
+        echo "You may need to delete it."
+    else
+        /tmp/Comet_Backup-25.5.0.run --lobby
+    fi
 fi
 
 while true; do
