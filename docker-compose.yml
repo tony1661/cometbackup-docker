@@ -1,0 +1,12 @@
+services:
+  cometbackup:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: cometbackup
+    environment:
+      - HOSTNAME=cometbackup-docker
+    volumes:
+      # - ./data:/opt/CometBackup
+      - ./config:/root/.config/backup-tool
+    restart: unless-stopped
