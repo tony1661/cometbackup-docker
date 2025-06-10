@@ -4,8 +4,7 @@ services:
       context: .
       dockerfile: dockerfile
     container_name: cometbackup
-    environment:
-      - HOSTNAME=cometbackup-docker
+    env_file: "comet.env"
     volumes:
-      - ./config:/root/.config/backup-tool
+      - /home/tfernandez/Downloads:/data
     restart: unless-stopped

@@ -1,23 +1,14 @@
 #!/bin/bash
 set -e
-
+echo "Username: $COMET_USERNAME"
+echo "Password: $COMET_PASSWORD"
 # Verify if the Comet Backup folder exists
-if [ -d /opt/CometBackup ]; then
-    echo "/opt/CometBackup is not empty"
-    if [ ! -f /root/.config/backup-tool/config.dat ]; then
-        echo "/root/.config/backup-tool/config.dat is missing!"
-    else
-        /opt/CometBackup/backup-daemon-start.sh
-    fi
-    
+if [ ! -d /opt/CometBackup ]; then
+    (echo $COMET_USERNAME; echo $COMET_PASSWORD;) | /tmp/Comet_Backup-25.5.0.run
 else
-    echo "/opt/CometBackup is empty"
-    if [ -f /root/.config/backup-tool/config.dat ]; then
-        echo "File /root/.config/backup-tool/config.dat exists"
-        echo "You may need to delete it."
-    else
-        /tmp/Comet_Backup-25.5.0.run --lobby
-    fi
+    echo "Comet Backup folder already exists, skipping installation."
+    # (echo $COMET_USERNAME; echo $COMET_PASSWORD;) | /opt/CometBackup/backup-tool login prompt
+    /opt/CometBackup/backup-daemon-start-background.sh
 fi
 
 while true; do
