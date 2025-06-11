@@ -32,6 +32,19 @@ docker run -d \
   tony1661/cometbackup-docker
   ```
 
+### Docker Compose
+#### Clone this github repo
+```bash
+git clone https://github.com/tony1661/cometbackup-docker
+```
+Edit the comet.env file. Populate your credentials.
+Edit the docker-compose.yml file to mount the volume where your files to ba backed up are located so that CometBackup has access to them.
+
+#### Run Docker Compose
+```bash
+docker compose up -d
+```
+
 ## 📂 Getting Started (TrueNAS)
 If using TrueNAS, you will need to go to *Apps* then *Discover Apps* then *Custom App*.
   
