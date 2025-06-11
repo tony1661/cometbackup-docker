@@ -37,15 +37,15 @@ If using TrueNAS, you will need to go to *Apps* then *Discover Apps* then *Custo
   
 
 Here are the minimum settings needed:
-    - Application Name
-    - Repository: meteortony/cometbackup-docker
-    - Environment Variables:
-        - COMET_USERNAME: enter-comet-username
-        - COMET_PASSWORD: enter-comet-password
-    - Storage:
-        - Type: Host Path
-        - Mount Path: where you'd like the host to have the files mounted
-        - Host Path: The location of the files on TrueNAS
+ - Application Name
+ - Repository: meteortony/cometbackup-docker
+ - Environment Variables:
+   - COMET_USERNAME: enter-comet-username
+   - COMET_PASSWORD: enter-comet-password
+ - Storage:
+   - Type: Host Path
+   - Mount Path: where you'd like the host to have the files mounted
+   - Host Path: The location of the files on TrueNAS
 
 ## 📝 Notes
 
