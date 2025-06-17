@@ -16,5 +16,6 @@ RUN apt-get update && \
 COPY ./Comet_Backup-25.5.0.run ./
 COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
+RUN chmod +x ./Comet_Backup-25.5.0.run
 
 CMD ["/entrypoint.sh"]

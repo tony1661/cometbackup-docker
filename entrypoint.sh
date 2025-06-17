@@ -12,10 +12,23 @@ else
     /opt/CometBackup/backup-daemon-start-background.sh
 fi
 
+attempts=0
+
 while true; do
     if ! pgrep -f backup-tool > /dev/null; then
-        echo "backup-tool service is not running!"
-        break
+        if pgrep -f comet > /dev/null; then
+            echo "Upgrade happening..."
+        fi
+
+        attempts=$((attempts + 1))
+        if [ "$attempts" -ge 3 ]; then
+            echo "backup-tool service is not running after 3 attempts!"
+            break
+        fi
+    else
+        # Reset attempts if backup-tool is running
+        attempts=0
     fi
-    sleep 5
+
+    sleep 15
 done
