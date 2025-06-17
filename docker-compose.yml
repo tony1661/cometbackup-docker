@@ -1,6 +1,6 @@
 services:
   cometbackup:
-    image: meteortony/cometbackup-docker
+    image: tony1661/cometbackup-docker:latest
     container_name: cometbackup
     env_file: "comet.env"
     volumes:
