@@ -2,10 +2,15 @@
 set -e
 echo "Username: $COMET_USERNAME"
 echo "Password: $COMET_PASSWORD"
+echo "Password: $COMET_SERVER_URL"
+
 # Verify if the Comet Backup folder exists
 if [ ! -d /opt/CometBackup ]; then
-    echo "Comet Backup folder does not exists. Installing."
-    (echo $COMET_USERNAME; echo $COMET_PASSWORD;) | /tmp/Comet_Backup-25.5.0.run
+    echo "Comet Backup folder does not exists."
+    echo "Downloading Comet Backup..."
+    wget -O comet.run --content-disposition --post-data "SelfAddress=${COMET_SERVER_URL//\//%2F}&Platform=7" "${COMET_SERVER_URL}api/v1/admin/branding/generate-client/by-platform"
+    echo "Installing with file: $filename ..."
+    (echo $COMET_USERNAME; echo $COMET_PASSWORD;) | bash /tmp/comet.run
 else
     echo "Comet Backup folder already exists, skipping installation."
     # (echo $COMET_USERNAME; echo $COMET_PASSWORD;) | /opt/CometBackup/backup-tool login prompt
