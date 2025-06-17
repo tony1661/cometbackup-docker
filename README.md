@@ -29,6 +29,7 @@ docker run -d \
   -v /path/to/files-to-backup:/data \
   -e COMET_USERNAME=test-username \
   -e COMET_PASSWORD=test-password \
+  -e COMET_SERVER_URL="https://YOURURLHERE.offsitenetwork.net/" \
   tony1661/cometbackup-docker
   ```
 
