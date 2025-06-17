@@ -64,6 +64,11 @@ Here are the minimum settings needed:
 
 -   This image is **unofficial** and not affiliated with Comet Backup.
 
+## Steps to publish to dockerhub
+ - sudo docker compose -f docker-compose-build.yml build
+ - sudo docker login
+ - sudo docker push tony1661/cometbackup-docker:latest
+
 
 ## 📎 Resources
 

@@ -1,5 +1,6 @@
 services:
   cometbackup:
+    image: tony1661/cometbackup-docker:latest
     build:
       context: .
       dockerfile: dockerfile
