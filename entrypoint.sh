@@ -1,5 +1,14 @@
 #!/bin/bash
 set -e
+
+if [ -z "$COMET_USERNAME" ] || [ -z "$COMET_PASSWORD" ] || [ -z "$COMET_SERVER_URL" ]; then
+    echo "Error: One or more required environment variables are missing."
+    echo "Username: $COMET_USERNAME"
+    echo "Password: $COMET_PASSWORD"
+    echo "Server URL: $COMET_SERVER_URL"
+    exit 1
+fi
+
 echo "Username: $COMET_USERNAME"
 echo "Password: $COMET_PASSWORD"
 echo "Password: $COMET_SERVER_URL"
