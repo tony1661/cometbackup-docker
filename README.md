@@ -55,6 +55,7 @@ Here are the minimum settings needed:
  - Environment Variables:
    - COMET_USERNAME: enter-comet-username
    - COMET_PASSWORD: enter-comet-password
+   - COMET_SERVER_URL: https://YOURURLHERE.offsitenetwork.net/
  - Storage:
    - Type: Host Path
    - Mount Path: where you'd like the host to have the files mounted
