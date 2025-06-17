@@ -51,7 +51,7 @@ If using TrueNAS, you will need to go to *Apps* then *Discover Apps* then *Custo
 
 Here are the minimum settings needed:
  - Application Name
- - Repository: meteortony/cometbackup-docker
+ - Repository: tony1661/cometbackup-docker
  - Environment Variables:
    - COMET_USERNAME: enter-comet-username
    - COMET_PASSWORD: enter-comet-password
