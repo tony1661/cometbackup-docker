@@ -44,5 +44,5 @@ while true; do
         attempts=0
     fi
 
-    sleep 15
+    sleep 60
 done
