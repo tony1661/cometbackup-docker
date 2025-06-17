@@ -2,8 +2,6 @@ FROM ubuntu:latest
 
 WORKDIR /tmp
 
-RUN echo "$HOSTNAME" > /etc/hostname
-
 RUN apt-get update && \
     apt-get install -y \
         bash \
